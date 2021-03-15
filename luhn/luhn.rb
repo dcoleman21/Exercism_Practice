@@ -8,10 +8,20 @@ To get started with TDD, see the `README.md` file in your
 
 class Luhn
   def self.valid?(nums)
-    if nums.length <= 1
+    no_space_nums = nums.gsub(/\s+/, "").chars.reverse
+    if no_space_nums.length <= 1
       false
     else
-      true
+      doubled_nums = no_space_nums.map.with_index do |num, index|
+        if index%2 == 1
+          num.to_i * 2
+        else
+          num.to_i
+        end
+      end
+      doubled_nums
+      # need to subract 9 from any number that is greater than 9
+      require "pry"; binding.pry
     end
   end
 end
