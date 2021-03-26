@@ -16,19 +16,19 @@ class Clock
   end
 
   def to_s
-    sprintf("%02d:%02d", hour, minute) # how does it know where to separate hours and minutes @ the colon?
+    sprintf("%02d:%02d", hour, minute)
     # "#{@hour.to_s.rjust(2, '0')}:#{@minute.to_s.rjust(2, '0')}"
   end
 
-  def +(clock) # how does ruby know to use this as both a method and for addition
+  def +(clock)
     Clock.new(hour: (clock.hour + @hour), minute: (clock.minute + @minute))
   end
 
-  def -(clock) # how does ruby know to use this as both a method and for subtraction
+  def -(clock)
     Clock.new(hour: (@hour - clock.hour), minute: (@minute - clock.minute))
   end
 
-  def ==(clock) # how does ruby know to use this as both a method and for equals
+  def ==(clock)
     @hour == clock.hour && @minute == clock.minute
   end
 end
