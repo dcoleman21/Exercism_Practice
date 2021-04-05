@@ -40,15 +40,14 @@ class TwelveDays
   def self.song
     12.times.map do |index|
       line(index + 1)
-      # require "pry"; binding.pry
     end.join("\n")
   end
 
   def self.line(num)
     if num == 1
-      "On the #{DAYS[num]} day of Christmas my true love gave to me: a Partridge in a Pear Tree."
+      "On the #{DAYS[num]} day of Christmas my true love gave to me: a Partridge in a Pear Tree.\n"
     else
-      "On the #{DAYS[num]} day of Christmas my true love gave to me: #{gifts(num)}."
+      "On the #{DAYS[num]} day of Christmas my true love gave to me: #{gifts(num)}.\n"
     end
   end
 
