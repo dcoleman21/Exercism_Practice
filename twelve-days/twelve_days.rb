@@ -20,7 +20,7 @@ class TwelveDays
     10 => 'tenth',
     11 => 'eleventh',
     12 => 'twelfth'
-  }
+  }.freeze
 
   GIFTS = [
      "and a Partridge in a Pear Tree",
@@ -35,10 +35,13 @@ class TwelveDays
      "ten Lords-a-Leaping",
      "eleven Pipers Piping",
      "twelve Drummers Drumming"
-  ]
+  ].freeze
 
   def self.song
-    12.times.map { |index| line(index + 1)}.join("\n\n")
+    12.times.map do |index|
+      line(index + 1)
+      # require "pry"; binding.pry
+    end.join("\n")
   end
 
   def self.line(num)
@@ -53,4 +56,4 @@ class TwelveDays
     GIFTS[0..num - 1].reverse.join(", ")
   end
 end
-# puts TwelveDays.song
+puts TwelveDays.song
