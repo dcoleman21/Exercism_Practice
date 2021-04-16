@@ -17,7 +17,9 @@ To get started with TDD, see the `README.md` file in your
 class Tournament
   # create rows for the table
   class Row
-    attr_accessor :wins, :losses, :draws
+    attr_accessor :wins,
+                  :losses,
+                  :draws
     def initialize
       @wins = 0
       @losses = 0
